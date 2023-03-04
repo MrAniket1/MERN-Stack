@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@200;300;400&family=Red+Rose&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Red Rose', cursive;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./bgimg.png');
+            height: 100vh;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            /* background-color: #bcbcbc; */
+            margin: 50px;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            font-size: 25px;
+            display: flex;
+            justify-content: space-between;
+            color: rgb(255, 190, 48);
+        }
+
+        ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .menu-items {
+            cursor: pointer;
+        }
+
+        .button-upper button {
+            cursor: pointer;
+            font-size: 20px;
+            border: none;
+            background: #ff4848;
+            color: rgb(255, 255, 255);
+            padding: 10px 40px;
+        }
+
+        /* main section Styling */
+        .main {
+            margin: auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            width: 70vw;
+        }
+
+        .heading,
+        .button-large {
+            display: flex;
+            justify-content: center;
+        }
+
+        .heading h1 {
+            font-family: 'Dela Gothic One', cursive;
+            color: rgb(255, 190, 48);
+            font-size: 85px;
+            line-height: 100px;
+
+        }
+
+        .button-large button {
+            cursor: pointer;
+            margin: 20px;
+            padding: 10px 30px;
+            font-size: 25px;
+            border: none;
+            background: #ff4848;
+            color: rgb(255, 255, 255);
+            font-weight: bolder;
+        }
+
+        .footer-logo {
+            display: flex;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="./white-logo.png" alt="White Logo">
+            </div>
+            <div class="menu-wrapper">
+                <ul class="menu-list">
+                    <li class="menu-items">Our Menu</li>
+                    <li class="menu-items">Maps</li>
+                    <li class="menu-items">About</li>
+                    <li class="menu-items">Contact</li>
+                </ul>
+            </div>
+            <div class="button-upper">
+                <button>Order</button>
+            </div>
+        </header>
+        <section class="main">
+            <div>
+                <div class="heading">
+                    <h1>
+                        A Restaurant That Only Serves Delicious Food
+                    </h1>
+                </div>
+                <div class="button-large">
+                    <button>
+                        Read Our Menu
+                    </button>
+                </div>
+                <div class="footer-logo">
+                    <img src="./scrool.png" alt="footer-logo">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
