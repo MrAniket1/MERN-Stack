@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .project {
+            text-align: center;
+            border: 1px solid #ccc;
+            width: 300px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project">
+        <h2>Project 1: OnClick Event</h2>
+        <button id="clickButton">Click Me</button>
+        <p id="clickOutput"></p>
+    </div>
+
+    <div class="project">
+        <h2>Project 2: DoubleClick Event</h2>
+        <button id="doubleClickButton">Double Click Me</button>
+        <p id="doubleClickOutput"></p>
+    </div>
+
+    <div class="project">
+        <h2>Project 3: MouseMove Event</h2>
+        <div id="mousemoveDiv" style="width: 200px; height: 200px; background-color: lightblue;"></div>
+    </div>
+
+    <div class="project">
+        <h2>Project 4: MouseOut Event</h2>
+        <div id="mouseoutDiv" style="width: 200px; height: 200px; background-color: lightgreen;">Mouse Over Me</div>
+        <p id="mouseoutOutput"></p>
+    </div>
+
+    <div class="project">
+        <h2>Project 5: OnKeyPress Event</h2>
+        <input type="text" id="keypressInput" placeholder="Type here...">
+        <p id="keypressOutput"></p>
+    </div>
+
+    <div class="project">
+        <h2>Project 6: KeyDown & KeyUp Events</h2>
+        <input type="text" id="keydownInput" placeholder="Press a key...">
+        <p id="keydownOutput"></p>
+    </div>
+
+    <script>
+        // Project 1: OnClick Event
+        const clickButton = document.getElementById("clickButton");
+        const clickOutput = document.getElementById("clickOutput");
+
+        clickButton.addEventListener("click", () => {
+            clickOutput.textContent = "Button Clicked!";
+        });
+
+        // Project 2: DoubleClick Event
+        const doubleClickButton = document.getElementById("doubleClickButton");
+        const doubleClickOutput = document.getElementById("doubleClickOutput");
+
+        doubleClickButton.addEventListener("dblclick", () => {
+            doubleClickOutput.textContent = "Button Double Clicked!";
+        });
+
+        // Project 3: MouseMove Event
+        const mousemoveDiv = document.getElementById("mousemoveDiv");
+
+        mousemoveDiv.addEventListener("mousemove", (event) => {
+            mousemoveDiv.textContent = `Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`;
+        });
+
+        // Project 4: MouseOut Event
+        const mouseoutDiv = document.getElementById("mouseoutDiv");
+        const mouseoutOutput = document.getElementById("mouseoutOutput");
+
+        mouseoutDiv.addEventListener("mouseout", () => {
+            mouseoutOutput.textContent = "Mouse Out!";
+        });
+
+        // Project 5: OnKeyPress Event
+        const keypressInput = document.getElementById("keypressInput");
+        const keypressOutput = document.getElementById("keypressOutput");
+
+        keypressInput.addEventListener("keypress", (event) => {
+            keypressOutput.textContent = `Key Pressed: ${event.key}`;
+        });
+
+        // Project 6: KeyDown & KeyUp Events
+        const keydownInput = document.getElementById("keydownInput");
+        const keydownOutput = document.getElementById("keydownOutput");
+
+        keydownInput.addEventListener("keydown", () => {
+            keydownOutput.textContent = "Key Down!";
+        });
+
+        keydownInput.addEventListener("keyup", () => {
+            keydownOutput.textContent = "Key Up!";
+        });
+    </script>
+</body>
+
+</html>
