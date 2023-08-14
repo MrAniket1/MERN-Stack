@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Count Vowels in a Name</title>
+</head>
+
+<body>
+    <h1>Count Vowels in a Name</h1>
+
+    <form id="vowelForm">
+        <label for="name">Enter a name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="button" onclick="countVowels()">Count Vowels</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function countVowels() {
+            const nameInput = document.getElementById('name').value;
+            const vowels = 'aeiouAEIOU';
+            let vowelCount = 0;
+
+            for (const char of nameInput) {
+                if (vowels.includes(char)) {
+                    vowelCount++;
+                }
+            }
+
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `The number of vowels in the name '${nameInput}' is: ${vowelCount}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamically Adding List Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>What you'll learn:</h2>
+    <ol id="learningList"></ol>
+    <button id="addButton">Add Item</button>
+
+    <script>
+        const learningList = document.getElementById('learningList');
+        const addButton = document.getElementById('addButton');
+
+        const itemList = [
+            'HTML Basics',
+            'CSS Styling',
+            'JavaScript Fundamentals',
+            'Web Development Principles'
+        ];
+
+        let currentIndex = 0;
+
+        addButton.addEventListener('click', () => {
+            if (currentIndex < itemList.length) {
+                const listItem = document.createElement('li');
+                listItem.textContent = itemList[currentIndex];
+                learningList.appendChild(listItem);
+                currentIndex++;
+            } else {
+                addButton.disabled = true;
+                addButton.textContent = 'All items added';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Movement with Arrow Keys</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const image = new Image();
+        image.src = 'https://i.pinimg.com/564x/53/8c/6e/538c6eb737cc2dcaf38204eb9da672d3.jpg'; // Replace with the actual path to your image
+        let x = canvas.width / 2;
+        let y = canvas.height / 2;
+        const speed = 5;
+
+        image.onload = function () {
+            ctx.drawImage(image, x, y);
+        };
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawImage() {
+            clearCanvas();
+            ctx.drawImage(image, x, y);
+        }
+
+        function moveImage(direction) {
+            switch (direction) {
+                case 'up':
+                    y -= speed;
+                    break;
+                case 'down':
+                    y += speed;
+                    break;
+                case 'left':
+                    x -= speed;
+                    break;
+                case 'right':
+                    x += speed;
+                    break;
+            }
+            drawImage();
+        }
+
+        document.addEventListener('keydown', function (event) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    moveImage('up');
+                    break;
+                case 'ArrowDown':
+                    moveImage('down');
+                    break;
+                case 'ArrowLeft':
+                    moveImage('left');
+                    break;
+                case 'ArrowRight':
+                    moveImage('right');
+                    break;
+            }
+        });
+
+        // Optional: You can also handle the 'keyup' event to stop the movement when the key is released.
+        document.addEventListener('keyup', function (event) {
+            // Stop movement code here
+        });
+    </script>
+</body>
+
+</html>

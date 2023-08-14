@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Highlight Long Words</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="paragraph">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel totam expedita doloribus iusto dolorum quae
+        corrupti sunt unde, mollitia earum obcaecati nemo reprehenderit explicabo magni. Reiciendis sed dicta
+        reprehenderit odio at, quo itaque. Odit deserunt dolorum vel quam! Debitis, modi eum quis corrupti reiciendis
+        cum eveniet id in. Voluptates aperiam eaque suscipit repellendus quasi explicabo ea harum minus dolor accusamus
+        voluptatem architecto ullam quos, velit maiores quibusdam voluptate! Quam facilis ratione rem beatae repellendus
+        amet, nisi repudiandae minima assumenda fuga dolores eaque non ipsa quia harum delectus! Ducimus aliquam facere
+        architecto alias voluptate, quia culpa ullam debitis expedita hic laboriosam.
+    </p>
+
+    <script>
+        // Get the paragraph element
+        const paragraph = document.getElementById('paragraph');
+
+        // Split the text content into words
+        const words = paragraph.textContent.trim().split(/\s+/);
+
+        // Iterate through the words
+        for (const word of words) {
+            if (word.length > 8) {
+                // Create a span element with the word and apply the highlight class
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.classList.add('highlight');
+
+                // Replace the word in the paragraph with the highlighted span
+                paragraph.innerHTML = paragraph.innerHTML.replace(word, span.outerHTML);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

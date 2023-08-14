@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>TODO App</h2>
+    <input type="text" id="todoInput" placeholder="Enter your TODO">
+    <button id="addButton">Add</button>
+    <ul id="todoList"></ul>
+
+    <script>
+        const todoInput = document.getElementById('todoInput');
+        const addButton = document.getElementById('addButton');
+        const todoList = document.getElementById('todoList');
+
+        addButton.addEventListener('click', () => {
+            const todoText = todoInput.value.trim();
+            if (todoText !== '') {
+                const listItem = document.createElement('li');
+                listItem.textContent = todoText;
+                todoList.appendChild(listItem);
+                todoInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
